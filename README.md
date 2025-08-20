@@ -235,10 +235,6 @@ The system uses an advanced intent classifier with **81.8% accuracy**:
 - **Compare Intent** (0.4-1.0): "Compare iPhone vs Samsung"
 - **General Intent** (0.0-0.3): "Hello, how are you?"
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md).
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -252,4 +248,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ using Model Context Protocol - The future of AI-tool integration! 🚀**
+**Built with ❤️ from @Pigrieco**
