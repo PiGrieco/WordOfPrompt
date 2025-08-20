@@ -1,0 +1,80 @@
+# WordOfPrompt - Production Dependencies
+# Core framework and web server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+gunicorn>=21.2.0
+gevent>=23.7.0
+
+# Data validation and settings
+pydantic>=2.4.0
+pydantic-settings>=2.0.0
+
+# AI and ML frameworks
+crewai>=0.28.0
+langchain>=0.1.0
+langchain-community>=0.0.20
+langchain-openai>=0.0.5
+openai>=1.3.0
+transformers>=4.35.0
+
+# Database and caching
+sqlalchemy>=2.0.0
+alembic>=1.12.0
+psycopg2-binary>=2.9.0
+redis>=5.0.0
+
+# Web framework and WebSocket
+flask>=3.0.0
+flask-socketio>=5.3.0
+flask-cors>=4.0.0
+
+# HTTP clients and APIs
+httpx>=0.25.0
+requests>=2.31.0
+aiohttp>=3.9.0
+
+# Data processing and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+beautifulsoup4>=4.12.0
+
+# Natural language processing
+nltk>=3.8.0
+rake-nltk>=1.0.6
+yake>=0.4.8
+textstat>=0.7.3
+
+# Utilities and helpers
+python-dotenv>=1.0.0
+click>=8.1.0
+rich>=13.0.0
+typer>=0.9.0
+tenacity>=8.2.0
+
+# Security
+bcrypt>=4.0.0
+cryptography>=41.0.0
+pyjwt>=2.8.0
+
+# Monitoring and logging
+prometheus-client>=0.19.0
+structlog>=23.2.0
+
+# Task queue and background jobs
+celery>=5.3.0
+redis>=5.0.0
+
+# Configuration management
+dynaconf>=3.2.0
+
+# Date and time utilities
+python-dateutil>=2.8.0
+pytz>=2023.3
+
+# Validation and parsing
+marshmallow>=3.20.0
+jsonschema>=4.19.0
+
+# Performance and optimization
+cachetools>=5.3.0
+lru-dict>=1.2.0

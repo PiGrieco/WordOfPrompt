@@ -1,0 +1,167 @@
+{
+  "mcpServers": {
+    "wordofprompt-unified": {
+      "command": "python",
+      "args": [
+        "-m",
+        "wordofprompt.src.mcp.servers.unified"
+      ],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+        "RAINFOREST_API_KEY": "${RAINFOREST_API_KEY}",
+        "AMAZON_AFFILIATE_ID": "${AMAZON_AFFILIATE_ID}",
+        "HUGGINGFACE_API_KEY": "${HUGGINGFACE_API_KEY}",
+        "INTENT_THRESHOLD": "0.95",
+        "KEYWORD_METHOD": "rake",
+        "MAX_KEYWORDS": "5",
+        "DEFAULT_AMAZON_DOMAIN": "amazon.com"
+      },
+      "description": "Unified WordOfPrompt MCP server providing complete AI-powered advertising recommendation system"
+    },
+    "amazon-search": {
+      "command": "python",
+      "args": [
+        "-m", 
+        "wordofprompt.src.mcp.servers.amazon_search"
+      ],
+      "env": {
+        "RAINFOREST_API_KEY": "${RAINFOREST_API_KEY}",
+        "AMAZON_AFFILIATE_ID": "${AMAZON_AFFILIATE_ID}",
+        "DEFAULT_AMAZON_DOMAIN": "amazon.com"
+      },
+      "description": "Amazon product search MCP server using Rainforest API"
+    },
+    "intent-analysis": {
+      "command": "python",
+      "args": [
+        "-m",
+        "wordofprompt.src.mcp.servers.intent_analysis"
+      ],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+        "HUGGINGFACE_API_KEY": "${HUGGINGFACE_API_KEY}",
+        "HUGGINGFACE_MODEL_ID": "PiGrieco/OpenSesame",
+        "INTENT_THRESHOLD": "0.95"
+      },
+      "description": "Intent analysis MCP server using fine-tuned models"
+    },
+    "keyword-extraction": {
+      "command": "python",
+      "args": [
+        "-m",
+        "wordofprompt.src.mcp.servers.keyword_extraction"
+      ],
+      "env": {
+        "KEYWORD_METHOD": "rake",
+        "MAX_KEYWORDS": "5"
+      },
+      "description": "Keyword extraction MCP server with multiple algorithms"
+    },
+    "product-recommendation": {
+      "command": "python",
+      "args": [
+        "-m",
+        "wordofprompt.src.mcp.servers.product_recommendation"
+      ],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "description": "Product recommendation MCP server with AI-powered analysis"
+    }
+  },
+  "client": {
+    "name": "WordOfPrompt MCP Client",
+    "version": "1.0.0",
+    "capabilities": {
+      "roots": {
+        "listChanged": true
+      },
+      "sampling": {}
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/mcp.log"
+  },
+  "transport": {
+    "type": "stdio",
+    "options": {
+      "timeout": 30000,
+      "retries": 3
+    }
+  },
+  "security": {
+    "allowedCommands": [
+      "python",
+      "node",
+      "npm"
+    ],
+    "environmentVariables": {
+      "required": [
+        "OPENAI_API_KEY",
+        "RAINFOREST_API_KEY"
+      ],
+      "optional": [
+        "AMAZON_AFFILIATE_ID",
+        "HUGGINGFACE_API_KEY",
+        "INTENT_THRESHOLD",
+        "KEYWORD_METHOD",
+        "MAX_KEYWORDS",
+        "DEFAULT_AMAZON_DOMAIN"
+      ]
+    }
+  },
+  "tools": {
+    "unified": [
+      "analyze_and_recommend",
+      "analyze_intent", 
+      "extract_keywords",
+      "search_amazon",
+      "generate_recommendations",
+      "get_system_status"
+    ],
+    "amazon_search": [
+      "search_products",
+      "get_product_details",
+      "get_search_suggestions"
+    ],
+    "intent_analysis": [
+      "analyze_intent",
+      "batch_analyze_intent",
+      "update_threshold"
+    ],
+    "keyword_extraction": [
+      "extract_keywords",
+      "extract_with_scores",
+      "compare_methods"
+    ],
+    "product_recommendation": [
+      "generate_recommendations",
+      "analyze_product",
+      "compare_products"
+    ]
+  },
+  "resources": {
+    "unified": [
+      "wordofprompt://config",
+      "wordofprompt://health", 
+      "wordofprompt://analytics",
+      "wordofprompt://models"
+    ],
+    "amazon_search": [
+      "amazon://domains",
+      "amazon://categories",
+      "amazon://stats"
+    ]
+  },
+  "prompts": {
+    "unified": [
+      "complete_workflow",
+      "product_recommendation"
+    ],
+    "amazon_search": [
+      "product_search",
+      "product_comparison"
+    ]
+  }
+}

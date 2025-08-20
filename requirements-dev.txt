@@ -1,0 +1,63 @@
+# WordOfPrompt - Development Dependencies
+# Include production dependencies
+-r requirements.txt
+
+# Testing frameworks
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-asyncio>=0.21.0
+pytest-mock>=3.12.0
+pytest-xdist>=3.3.0
+pytest-benchmark>=4.0.0
+factory-boy>=3.3.0
+
+# Code quality and formatting
+black>=23.9.0
+isort>=5.12.0
+flake8>=6.1.0
+mypy>=1.6.0
+pylint>=3.0.0
+bandit>=1.7.5
+
+# Pre-commit hooks
+pre-commit>=3.5.0
+
+# Documentation
+mkdocs>=1.5.0
+mkdocs-material>=9.4.0
+mkdocstrings[python]>=0.24.0
+
+# Development tools
+ipython>=8.15.0
+jupyter>=1.0.0
+notebook>=7.0.0
+
+# Database tools
+alembic>=1.12.0
+pgcli>=4.0.0
+
+# Debugging and profiling
+pdb++>=0.10.3
+py-spy>=0.3.14
+memory-profiler>=0.61.0
+
+# API testing
+httpx>=0.25.0
+requests-mock>=1.11.0
+
+# Load testing
+locust>=2.17.0
+
+# Security scanning
+safety>=2.3.0
+pip-audit>=2.6.0
+
+# Type checking
+types-requests>=2.31.0
+types-redis>=4.6.0
+types-python-dateutil>=2.8.0
+
+# Development utilities
+watchdog>=3.0.0
+python-dotenv>=1.0.0
+environs>=10.0.0
